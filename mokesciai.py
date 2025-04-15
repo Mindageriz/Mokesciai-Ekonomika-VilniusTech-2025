@@ -30,8 +30,13 @@ elif atlyginimas > 2387.29 and atlyginimas < 2865:
 else:
     npd = 0
 
+if atlyginimas > VDU:
+    tarifasGPM = 0.32
+else:
+    tarifasGPM = 0.2    
+
 apmokestinamas = max(0, (atlyginimas - npd))
-gpm = apmokestinamas * 0.20
+gpm = apmokestinamas * tarifasGPM
 vsd = atlyginimas * 0.1252
 psd = atlyginimas * 0.0698
 mokesciai_viso = gpm + vsd + psd
